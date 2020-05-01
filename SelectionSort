@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+void sel_Sort(int *a,int size){
+  int i;
+  int imin;
+  int j;
+  int temp;
+  for(i=0;i<size-1;i++){
+    imin=i;
+    for(j=i;j<size;j++){
+      if(a[j]<a[imin]){
+        imin=j;
+      }
+    }
+    temp=a[imin];
+    a[imin]=a[i];
+    a[i]=temp;
+  }
+}
+
+int main() {
+  int a[]={1,0,8,6};
+  sel_Sort(a, 4);
+  cout<< a[0]<< a[1]<< a[2]<< a[3]<<endl;
+}
